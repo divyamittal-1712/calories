@@ -35,7 +35,7 @@ public class Signup extends AppCompatActivity {
         databaseManagerModel = new DatabaseManagerModel(ed_name.getText().toString(), ed_height.getText().toString(), ed_weight.getText().toString(), ed_age.getText().toString(), ed_mail.getText().toString());
         databaseHandler = new DatabaseHandler(this);
 
-
+        Toast.makeText(getApplicationContext(),"Demo",Toast.LENGTH_LONG).show();
 
         signup_btn.setOnClickListener(new View.OnClickListener() {
             @Override
