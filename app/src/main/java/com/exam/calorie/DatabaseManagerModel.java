@@ -7,7 +7,7 @@ public class DatabaseManagerModel {
     String age,sex,weight,mail;
 
 
-    public DatabaseManagerModel() {
+    public DatabaseManagerModel(String s, String toString, String string, String s1, String toString1) {
 
     }
 

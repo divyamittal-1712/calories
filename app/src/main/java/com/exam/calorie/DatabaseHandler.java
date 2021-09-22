@@ -5,9 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
@@ -73,7 +71,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         if (cursor != null)
             cursor.moveToFirst();
 
-        DatabaseManagerModel databaseManagerModel = new DatabaseManagerModel();
+        DatabaseManagerModel databaseManagerModel = new DatabaseManagerModel(ed_name.getText().toString(), ed_height.getText().toString(), ed_weight.getText().toString(), ed_age.getText().toString(), ed_mail.getText().toString());
         databaseManagerModel.setName(String.valueOf(cursor.getString(cursor.getColumnIndex(Key_Name))));
         databaseManagerModel.setHeight(String.valueOf(cursor.getString(cursor.getColumnIndex(Key_Height))));
         databaseManagerModel.setWeight(String.valueOf(cursor.getString(cursor.getColumnIndex(Key_Weight))));

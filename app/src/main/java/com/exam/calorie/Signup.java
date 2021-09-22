@@ -2,17 +2,17 @@ package com.exam.calorie;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class Signup extends AppCompatActivity {
 
-    EditText ed_name,ed_weight,ed_age,ed_height,ed_sex,ed_mail;
+    EditText ed_name,ed_weight,ed_age,ed_height,ed_mail;
+    RadioGroup ed_sex;
     Button signup_btn;
     DatabaseHandler databaseHandler;
     DatabaseManagerModel databaseManagerModel;
@@ -32,7 +32,7 @@ public class Signup extends AppCompatActivity {
         signup_btn = findViewById(R.id.signup_btn);
         get_name = findViewById(R.id.get_name);
 
-        databaseManagerModel = new DatabaseManagerModel();
+        databaseManagerModel = new DatabaseManagerModel(ed_name.getText().toString(), ed_height.getText().toString(), ed_weight.getText().toString(), ed_age.getText().toString(), ed_mail.getText().toString());
         databaseHandler = new DatabaseHandler(this);
 
 
@@ -40,7 +40,8 @@ public class Signup extends AppCompatActivity {
         signup_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                databaseHandler.addDatabase(new DatabaseManagerModel(ed_name.getText().toString(),ed_height.getText().toString(),ed_weight.getText().toString(),ed_age.getText().toString(),ed_sex.getText().toString(),ed_mail.getText().toString()));
+                databaseHandler.addDatabase(new DatabaseManagerModel(ed_name.getText().toString(),ed_height.getText().toString(),ed_weight.getText().toString(),ed_age.getText().toString(),
+                        ed_mail.getText().toString()));
 
                 databaseManagerModel = databaseHandler.getDatabase(ed_mail.getText().toString());
                 String name = databaseManagerModel.getName();
