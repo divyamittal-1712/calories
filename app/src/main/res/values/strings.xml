@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Calorie</string>
+
+    <string-array name="meal_type_options">
+        <item>Breakast</item>
+        <item>Lunch</item>
+        <item>Snacks</item>
+        <item>Dinner</item>
+    </string-array>
+
 </resources>
