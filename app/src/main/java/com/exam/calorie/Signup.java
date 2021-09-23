@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Signup extends AppCompatActivity {
 
@@ -48,7 +49,6 @@ public class Signup extends AppCompatActivity {
                 get_name.setText(name);
             }
         });
-
 
     }
 }
