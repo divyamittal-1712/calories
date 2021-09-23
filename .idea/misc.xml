@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Neelesh/Calorie/app/src/main/res/layout/activity_daily_.xml" value="0.20416666666666666" />
+        <entry key="..\:/Neelesh/Calorie/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Neelesh/Calorie/app/src/main/res/layout/activity_sign_in.xml" value="0.19010416666666666" />
+        <entry key="..\:/Neelesh/Calorie/app/src/main/res/layout/activity_signup.xml" value="0.17222222222222222" />
+        <entry key="..\:/Neelesh/Calorie/app/src/main/res/layout/show_user_layout.xml" value="0.20416666666666666" />
+        <entry key="..\:/Neelesh/Calorie/app/src/main/res/menu/logout.xml" value="0.20416666666666666" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
+</project>

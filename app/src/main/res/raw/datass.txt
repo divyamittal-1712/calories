@@ -1,0 +1,264 @@
+﻿{
+    "Sheet1": [
+        {
+            "ID": "167512",
+            "name": "Pillsbury Golden Layer Buttermilk Biscuits Artificial Flavor Refrigerated Dough",
+            "Food Group": "Baked Foods",
+            "Calories": "307",
+            "Fat (g)": "13.24",
+            "Protein (g)": "5.88",
+            "Carbohydrate (g)": "41.18",
+            "Serving Description 1 (g)": "1 serving"
+        },
+        {
+            "ID": "167513",
+            "name": "Pillsbury Cinnamon Rolls With Icing Refrigerated Dough",
+            "Food Group": "Baked Foods",
+            "Calories": "330",
+            "Fat (g)": "11.27",
+            "Protein (g)": "4.34",
+            "Carbohydrate (g)": "53.42",
+            "Serving Description 1 (g)": "1 serving 1 roll with icing"
+        },
+        {
+            "ID": "167514",
+            "name": "Kraft Foods Shake N Bake Original Recipe Coating For Pork Dry",
+            "Food Group": "Baked Foods",
+            "Calories": "377",
+            "Fat (g)": "3.7",
+            "Protein (g)": "6.1",
+            "Carbohydrate (g)": "79.8",
+            "Serving Description 1 (g)": "1 serving"
+        },
+        {
+            "ID": "167515",
+            "name": "George Weston Bakeries Thomas English Muffins",
+            "Food Group": "Baked Foods",
+            "Calories": "232",
+            "Fat (g)": "1.8",
+            "Protein (g)": "8",
+            "Carbohydrate (g)": "46",
+            "Serving Description 1 (g)": "1 serving"
+        },
+        {
+            "ID": "167516",
+            "name": "Waffles Buttermilk Frozen Ready-To-Heat",
+            "Food Group": "Baked Foods",
+            "Calories": "273",
+            "Fat (g)": "9.22",
+            "Protein (g)": "6.58",
+            "Carbohydrate (g)": "41.05",
+            "Serving Description 1 (g)": "1 waffle, square"
+        },
+        {
+            "ID": "167517",
+            "name": "Waffle Buttermilk Frozen Ready-To-Heat Toasted",
+            "Food Group": "Baked Foods",
+            "Calories": "309",
+            "Fat (g)": "9.49",
+            "Protein (g)": "7.42",
+            "Carbohydrate (g)": "48.39",
+            "Serving Description 1 (g)": "1 oz"
+        },
+        {
+            "ID": "167518",
+            "name": "Waffle Buttermilk Frozen Ready-To-Heat Microwaved",
+            "Food Group": "Baked Foods",
+            "Calories": "289",
+            "Fat (g)": "9.4",
+            "Protein (g)": "6.92",
+            "Carbohydrate (g)": "44.16",
+            "Serving Description 1 (g)": "1 waffle"
+        },
+        {
+            "ID": "167519",
+            "name": "Waffle Plain Frozen Ready-To-Heat Microwave",
+            "Food Group": "Baked Foods",
+            "Calories": "298",
+            "Fat (g)": "9.91",
+            "Protein (g)": "6.71",
+            "Carbohydrate (g)": "45.41",
+            "Serving Description 1 (g)": "1 waffle, round (4 inchdia)"
+        },
+        {
+            "ID": "167520",
+            "name": "Pie Crust Cookie-Type Graham Cracker Ready Crust",
+            "Food Group": "Baked Foods",
+            "Calories": "501",
+            "Fat (g)": "24.83",
+            "Protein (g)": "5.1",
+            "Carbohydrate (g)": "64.3",
+            "Serving Description 1 (g)": "1 oz"
+        },
+        {
+            "ID": "167521",
+            "name": "Pie Crust Cookie-Type Chocolate Ready Crust",
+            "Food Group": "Baked Foods",
+            "Calories": "484",
+            "Fat (g)": "22.42",
+            "Protein (g)": "6.08",
+            "Carbohydrate (g)": "64.48",
+            "Serving Description 1 (g)": "1 crust"
+        },
+        {
+            "ID": "167522",
+            "name": "Dutch Apple Pie",
+            "Food Group": "Baked Foods",
+            "Calories": "290",
+            "Fat (g)": "11.5",
+            "Protein (g)": "2.17",
+            "Carbohydrate (g)": "44.54",
+            "Serving Description 1 (g)": "1/8 pie 1 pie (1/8 of 9 inch pie)"
+        },
+        {
+            "ID": "167523",
+            "name": "Pie Crust Deep Dish Frozen Unbaked Made With Enriched Flour",
+            "Food Group": "Baked Foods",
+            "Calories": "468",
+            "Fat (g)": "28.74",
+            "Protein (g)": "5.52",
+            "Carbohydrate (g)": "46.79",
+            "Serving Description 1 (g)": "1 pie crust (average weight)"
+        },
+        {
+            "ID": "167524",
+            "name": "Waffles Chocolate Chip Frozen Ready-To-Heat",
+            "Food Group": "Baked Foods",
+            "Calories": "297",
+            "Fat (g)": "10.1",
+            "Protein (g)": "5.8",
+            "Carbohydrate (g)": "45.68",
+            "Serving Description 1 (g)": "2 waffles"
+        },
+        {
+            "ID": "167525",
+            "name": "Tostada Shells Corn",
+            "Food Group": "Baked Foods",
+            "Calories": "474",
+            "Fat (g)": "23.38",
+            "Protein (g)": "6.15",
+            "Carbohydrate (g)": "64.43",
+            "Serving Description 1 (g)": "1 piece"
+        },
+        {
+            "ID": "167526",
+            "name": "Bread Salvadoran Sweet Cheese (Quesadilla Salvadorena)",
+            "Food Group": "Baked Foods",
+            "Calories": "374",
+            "Fat (g)": "17.12",
+            "Protein (g)": "7.12",
+            "Carbohydrate (g)": "47.84",
+            "Serving Description 1 (g)": "1 serving (approximate serving size)"
+        },
+        {
+            "ID": "167527",
+            "name": "Bread Pound Cake Type Pan De Torta Salvadoran",
+            "Food Group": "Baked Foods",
+            "Calories": "390",
+            "Fat (g)": "17.45",
+            "Protein (g)": "7.06",
+            "Carbohydrate (g)": "51.29",
+            "Serving Description 1 (g)": "1 serving"
+        },
+        {
+            "ID": "167528",
+            "name": "Pastry Pastelitos De Guava (Guava Pastries)",
+            "Food Group": "Baked Foods",
+            "Calories": "379",
+            "Fat (g)": "18.5",
+            "Protein (g)": "5.48",
+            "Carbohydrate (g)": "47.76",
+            "Serving Description 1 (g)": "1 piece"
+        },
+        {
+            "ID": "167529",
+            "name": "Crackers Snack Goya Crackers",
+            "Food Group": "Baked Foods",
+            "Calories": "433",
+            "Fat (g)": "13.35",
+            "Protein (g)": "14.25",
+            "Carbohydrate (g)": "64.35",
+            "Serving Description 1 (g)": "1 serving (1 nlea serving - about 4 crackers)"
+        },
+        {
+            "ID": "167530",
+            "name": "Crackers Cream Gamesa Sabrosas",
+            "Food Group": "Baked Foods",
+            "Calories": "484",
+            "Fat (g)": "20.37",
+            "Protein (g)": "7.01",
+            "Carbohydrate (g)": "64.55",
+            "Serving Description 1 (g)": "11 crackers (1 nlea serving)"
+        },
+        {
+            "ID": "167531",
+            "name": "Crackers Cream La Moderna Rikis Cream Crackers",
+            "Food Group": "Baked Foods",
+            "Calories": "464",
+            "Fat (g)": "19.5",
+            "Protein (g)": "7.19",
+            "Carbohydrate (g)": "64.88",
+            "Serving Description 1 (g)": "10 crackers (1 nlea serving)"
+        },
+        {
+            "ID": "167532",
+            "name": "Bread White Wheat",
+            "Food Group": "Baked Foods",
+            "Calories": "238",
+            "Fat (g)": "2.15",
+            "Protein (g)": "10.66",
+            "Carbohydrate (g)": "43.91",
+            "Serving Description 1 (g)": "1 slice"
+        },
+        {
+            "ID": "167533",
+            "name": "Bagels Wheat",
+            "Food Group": "Baked Foods",
+            "Calories": "250",
+            "Fat (g)": "1.53",
+            "Protein (g)": "10.2",
+            "Carbohydrate (g)": "48.89",
+            "Serving Description 1 (g)": "1 bagel"
+        },
+        {
+            "ID": "167534",
+            "name": "Cream Puff Eclair Custard Or Cream Filled Iced",
+            "Food Group": "Baked Foods",
+            "Calories": "334",
+            "Fat (g)": "18.52",
+            "Protein (g)": "4.41",
+            "Carbohydrate (g)": "37.43",
+            "Serving Description 1 (g)": "4 oz"
+        },
+        {
+            "ID": "167535",
+            "name": "Tortillas Ready-To-Bake Or -Fry Flour Shelf Stable",
+            "Food Group": "Baked Foods",
+            "Calories": "297",
+            "Fat (g)": "7.58",
+            "Protein (g)": "8.01",
+            "Carbohydrate (g)": "49.27",
+            "Serving Description 1 (g)": "1 tortilla"
+        },
+        {
+            "ID": "167536",
+            "name": "Snacks Beef Jerky Chopped And Formed",
+            "Food Group": "Snacks",
+            "Calories": "410",
+            "Fat (g)": "25.6",
+            "Protein (g)": "33.2",
+            "Carbohydrate (g)": "11",
+            "Serving Description 1 (g)": "1 oz"
+        },
+        {
+            "ID": "167537",
+            "name": "Snacks Corn-Based Extruded Chips Plain",
+            "Food Group": "Snacks",
+            "Calories": "539",
+            "Fat (g)": "33.36",
+            "Protein (g)": "6.17",
+            "Carbohydrate (g)": "57.27",
+            "Serving Description 1 (g)": "1 oz"
+        }
+    ]
+}

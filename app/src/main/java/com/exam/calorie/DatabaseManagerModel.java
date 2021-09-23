@@ -2,22 +2,39 @@ package com.exam.calorie;
 
 public class DatabaseManagerModel {
 
+    String id;
     String name;
     String height;
     String age,sex,weight,mail;
 
-
-    public DatabaseManagerModel(String s, String toString, String string, String s1, String toString1) {
-
+    public DatabaseManagerModel() {
     }
 
-    public DatabaseManagerModel(String name, String height,String weight, String age, String sex,  String mail) {
+    public DatabaseManagerModel(String id, String name, String height, String weight, String age, String sex, String mail) {
         this.name = name;
         this.height = height;
         this.age = age;
         this.sex = sex;
         this.weight = weight;
         this.mail = mail;
+        this.id = id;
+    }
+
+    public DatabaseManagerModel(String name, String height, String age, String sex, String weight, String mail) {
+        this.name = name;
+        this.height = height;
+        this.age = age;
+        this.sex = sex;
+        this.weight = weight;
+        this.mail = mail;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {

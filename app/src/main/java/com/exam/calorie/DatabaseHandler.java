@@ -5,14 +5,18 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
+
+import java.util.ArrayList;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
 
     private static final int Database_Version = 1;
-    private static final String Database_Name = "DatabaseManager";
-    private static final String Table_Name = "Calorie";
+    private static final String Database_Name = "calories";
+    private static final String Table_Name = "user_info";
+    private static final String Key_ID = "id";
     private static final String Key_Name = "name";
     private static final String Key_Height = "height";
     private static final String Key_Weight = "weight";
@@ -31,8 +35,14 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        String Create_Contacts_Table = "CREATE TABLE " + Table_Name + "(" + Key_Name + " TEXT, " + Key_Height + " TEXT, " + Key_Weight + " Text, " + Key_Age + " TEXT, " + Key_Sex + " TEXT, " + Key_Mail + " String PRIMARY KEY "+ ")";
-        db.execSQL(Create_Contacts_Table);
+        db.execSQL("CREATE TABLE " + Table_Name + "("
+                + Key_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + Key_Name + " TEXT, "
+                + Key_Height + " TEXT,"
+                + Key_Weight + " TEXT,"
+                + Key_Sex + " TEXT,"
+                + Key_Age + " TEXT,"
+                + Key_Mail + " TEXT UNIQUE)");
 
     }
 
@@ -43,42 +53,96 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void addDatabase(DatabaseManagerModel databaseManagerModel) {
+    public long addDatabase(String name, String height, String weight, String age, String sex, String mail) {
 
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(Key_Name, databaseManagerModel.getName());
-        values.put(Key_Height, databaseManagerModel.getHeight());
-        values.put(Key_Weight, databaseManagerModel.getWeight());
-        values.put(Key_Age, databaseManagerModel.getAge());
-        values.put(Key_Sex, databaseManagerModel.getSex());
-        values.put(Key_Mail, databaseManagerModel.getMail());
+        values.put(Key_Name, name);
+        values.put(Key_Height, height);
+        values.put(Key_Weight, weight);
+        values.put(Key_Age, age);
+        values.put(Key_Sex, sex);
+        values.put(Key_Mail, mail);
 
-        db.insert(Table_Name, null, values);
+        long id = db.insert(Table_Name, null, values);
         db.close();
 
+        return id;
     }
-
-    public DatabaseManagerModel getDatabase(String mealid) {
+    public DatabaseManagerModel getNote(long email) {
         SQLiteDatabase db = this.getReadableDatabase();
 
-
-//        Cursor cursor = db.rawQuery(selectQuery, null);
-
-        Cursor cursor =  db.rawQuery( "SELECT * FROM "+ Table_Name + " WHERE " + Key_Mail + " = '"+ mealid +"'" , null );
+        Cursor cursor = db.query(Table_Name,
+                new String[]{Key_ID, Key_Name,Key_Height,Key_Weight,Key_Age,Key_Sex,Key_Mail},
+                Key_ID + "=?",
+                new String[]{String.valueOf(email)}, null, null, null, null);
 
         if (cursor != null)
             cursor.moveToFirst();
 
-        DatabaseManagerModel databaseManagerModel = new DatabaseManagerModel(ed_name.getText().toString(), ed_height.getText().toString(), ed_weight.getText().toString(), ed_age.getText().toString(), ed_mail.getText().toString());
-        databaseManagerModel.setName(String.valueOf(cursor.getString(cursor.getColumnIndex(Key_Name))));
-        databaseManagerModel.setHeight(String.valueOf(cursor.getString(cursor.getColumnIndex(Key_Height))));
-        databaseManagerModel.setWeight(String.valueOf(cursor.getString(cursor.getColumnIndex(Key_Weight))));
-        databaseManagerModel.setAge(String.valueOf(cursor.getString(cursor.getColumnIndex(Key_Age))));
-        databaseManagerModel.setSex(String.valueOf(cursor.getString(cursor.getColumnIndex(Key_Sex))));
-        databaseManagerModel.setMail(String.valueOf(cursor.getString(cursor.getColumnIndex(Key_Mail))));
-        return databaseManagerModel;
+        DatabaseManagerModel note = new DatabaseManagerModel();
+        note.setId(cursor.getString(0));
+        note.setName(cursor.getString(1));
+        note.setMail(cursor.getString(2));
+
+        cursor.close();
+
+        return note;
+    }
+
+    public String matchEmail(String email) {
+//        SQLiteDatabase db = this.getWritableDatabase();
+//
+//        Cursor cursor = db.rawQuery("SELECT mail FROM user_info WHERE mail =" + email, null);
+//
+//        return email;
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.query(Table_Name,
+                new String[]{Key_ID, Key_Name,Key_Height,Key_Weight,Key_Age,Key_Sex,Key_Mail},
+                Key_Mail + "=?",
+                new String[]{String.valueOf(email)}, null, null, null, null);
+
+        if (cursor != null)
+            cursor.moveToFirst();
+
+        DatabaseManagerModel note = new DatabaseManagerModel();
+        note.setId(cursor.getString(0));
+        note.setName(cursor.getString(1));
+        note.setMail(cursor.getString(2));
+
+        cursor.close();
+
+        return email;
+    }
+
+    public ArrayList<DatabaseManagerModel> getDatabase() {
+        ArrayList<DatabaseManagerModel> managerModels = new ArrayList<>();
+
+        String selectQuery = "SELECT  * FROM " + Table_Name;
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                DatabaseManagerModel model = new DatabaseManagerModel();
+                model.setId(cursor.getString(cursor.getColumnIndex(Key_ID)));
+                model.setName(cursor.getString(cursor.getColumnIndex(Key_Name)));
+                model.setHeight(cursor.getString(cursor.getColumnIndex(Key_Height)));
+                model.setAge(cursor.getString(cursor.getColumnIndex(Key_Age)));
+                model.setSex(cursor.getString(cursor.getColumnIndex(Key_Sex)));
+                model.setWeight(cursor.getString(cursor.getColumnIndex(Key_Weight)));
+                model.setMail(cursor.getString(cursor.getColumnIndex(Key_Mail)));
+
+                managerModels.add(model);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+//        db.close();
+
+        return managerModels;
     }
 
 
