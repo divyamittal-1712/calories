@@ -83,12 +83,13 @@
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <Button
             android:layout_width="0dp"
             android:layout_weight=".5"
             android:layout_height="wrap_content"
             android:text="Add Food"
-            android:id="@+id/submit"
+            android:id="@+id/add_food"
             android:backgroundTint="@color/teal_200"
             android:layout_margin="10dp"
            />
@@ -98,7 +99,7 @@
             android:layout_weight=".5"
             android:layout_height="wrap_content"
             android:text="Add Activity"
-            android:id="@+id/delete_button"
+            android:id="@+id/add_activity"
             android:backgroundTint="@color/teal_700"
             android:layout_margin="10dp"
             />

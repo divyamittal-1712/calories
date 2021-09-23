@@ -15,6 +15,8 @@
         <activity
             android:name=".activity.SignInActivity"
             android:exported="true" />
+        <activity android:name=".Input_Activity"/>
+        <activity android:name=".Daily_Activity"/>
         <activity android:name=".activity.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
