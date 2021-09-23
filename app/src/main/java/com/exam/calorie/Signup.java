@@ -27,7 +27,6 @@ public class Signup extends AppCompatActivity {
         ed_weight = findViewById(R.id.ed_weight);
         ed_age = findViewById(R.id.ed_age);
         ed_height = findViewById(R.id.ed_height);
-        ed_sex = findViewById(R.id.ed_sex);
         ed_mail = findViewById(R.id.ed_mail);
         signup_btn = findViewById(R.id.signup_btn);
         get_name = findViewById(R.id.get_name);
@@ -35,7 +34,7 @@ public class Signup extends AppCompatActivity {
         databaseManagerModel = new DatabaseManagerModel();
         databaseHandler = new DatabaseHandler(this);
 
-        Toast.makeText(getApplicationContext(),"Demo",Toast.LENGTH_LONG).show();
+
 
         signup_btn.setOnClickListener(new View.OnClickListener() {
             @Override

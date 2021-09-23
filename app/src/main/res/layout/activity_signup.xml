@@ -106,7 +106,7 @@
                 />
 
 
-            <EditText
+            <TextView
                 android:id="@+id/ed_sex"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -123,6 +123,36 @@
                 android:textColorHint="@color/black"
                 />
 
+
+                <LinearLayout
+                    android:id="@+id/ll"
+                    android:layout_below="@+id/ed_sex"
+                    android:orientation="horizontal"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_width="match_parent"
+                    android:weightSum="2"
+                    android:layout_height="wrap_content">
+
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Male"
+                    android:layout_weight="1"
+                    android:id="@+id/male"
+                    android:checked="true" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Female"
+                    android:id="@+id/female"
+                    android:checked="false"
+                    android:layout_weight="1" />
+
+
+                </LinearLayout>
+
             <EditText
                 android:id="@+id/ed_mail"
                 android:layout_width="match_parent"
@@ -130,7 +160,7 @@
                 android:textSize="12dp"
                 android:layout_marginTop="20dp"
                 android:textColor="@color/black"
-                android:layout_below="@id/ed_sex"
+                android:layout_below="@id/ll"
                 android:paddingVertical="10dp"
                 android:layout_marginHorizontal="20dp"
                 android:inputType="textEmailAddress"
