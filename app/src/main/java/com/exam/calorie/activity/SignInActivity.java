@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.exam.calorie.DatabaseHandler;
 import com.exam.calorie.R;
@@ -35,9 +36,14 @@ public class SignInActivity extends AppCompatActivity {
                 ed_email.requestFocus();
             }
             else {
-                DatabaseHandler databaseHandler = new DatabaseHandler(this);
-                databaseHandler.matchEmail(email);
-                startActivity(new Intent(this,MainActivity.class));
+                try {
+                    DatabaseHandler databaseHandler = new DatabaseHandler(this);
+                    databaseHandler.matchEmail(email);
+                    startActivity(new Intent(this,MainActivity.class));
+                }catch (Exception e){
+                    Toast.makeText(this,"Not matched !!!",Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
     }

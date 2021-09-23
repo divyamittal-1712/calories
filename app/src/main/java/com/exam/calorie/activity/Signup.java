@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -87,6 +88,7 @@ public class Signup extends AppCompatActivity {
                 try {
 
                     DatabaseManagerModel n = databaseHandler.getNote(data);
+                    Log.e("data", String.valueOf(n));
                     if (n != null) {
                         editor.putString("name", ed_name.getText().toString());
                         editor.putString("id", n.getId());

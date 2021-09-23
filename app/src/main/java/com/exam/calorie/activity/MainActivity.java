@@ -9,9 +9,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.exam.calorie.DatabaseHandler;
@@ -39,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         String user_age = pref.getString("age",null);
         String user_height = pref.getString("height",null);
         String user_weight = pref.getString("weight",null);
-        String user_email = pref.getString("email",null);
+        String user_email = pref.getString("mail",null);
         String user_sex = pref.getString("sex",null);
         databaseHandler = new DatabaseHandler(this);
         if (user_name == null){
@@ -62,6 +64,14 @@ public class MainActivity extends AppCompatActivity {
         age.setText("Age: "+user_age);
         height.setText("Height: "+user_height);
         weight.setText("Weight: "+user_weight);
+        LinearLayout linear_layout = findViewById(R.id.linear_layout);
+        linear_layout.setBackgroundColor(Color.BLUE);
+        name.setTextColor(Color.WHITE);
+        email.setTextColor(Color.WHITE);
+        sex.setTextColor(Color.WHITE);
+        age.setTextColor(Color.WHITE);
+        height.setTextColor(Color.WHITE);
+        weight.setTextColor(Color.WHITE);
     }
 
     @Override

@@ -84,37 +84,33 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         DatabaseManagerModel note = new DatabaseManagerModel();
         note.setId(cursor.getString(0));
         note.setName(cursor.getString(1));
-        note.setMail(cursor.getString(2));
+        note.setMail(cursor.getString(6));
+        note.setWeight(cursor.getString(3));
+        note.setHeight(cursor.getString(2));
+        note.setSex(cursor.getString(5));
+        note.setAge(cursor.getString(4));
 
         cursor.close();
 
         return note;
     }
 
-    public String matchEmail(String email) {
+    public DatabaseManagerModel matchEmail(String email) {
 //        SQLiteDatabase db = this.getWritableDatabase();
 //
 //        Cursor cursor = db.rawQuery("SELECT mail FROM user_info WHERE mail =" + email, null);
 //
 //        return email;
         SQLiteDatabase db = this.getReadableDatabase();
-
-        Cursor cursor = db.query(Table_Name,
-                new String[]{Key_ID, Key_Name,Key_Height,Key_Weight,Key_Age,Key_Sex,Key_Mail},
-                Key_Mail + "=?",
-                new String[]{String.valueOf(email)}, null, null, null, null);
-
-        if (cursor != null)
-            cursor.moveToFirst();
-
-        DatabaseManagerModel note = new DatabaseManagerModel();
-        note.setId(cursor.getString(0));
-        note.setName(cursor.getString(1));
-        note.setMail(cursor.getString(2));
-
-        cursor.close();
-
-        return email;
+        Cursor res =  db.rawQuery("SELECT mail FROM user_info WHERE mail =" + email, null);
+        res.moveToFirst();
+        while(res.isAfterLast() == false){
+            DatabaseManagerModel response = new DatabaseManagerModel();
+            response.mail = res.getString(res.getColumnIndex(Table_Name));
+            // rest of columns
+            return response;
+        }
+        return null;
     }
 
     public ArrayList<DatabaseManagerModel> getDatabase() {
