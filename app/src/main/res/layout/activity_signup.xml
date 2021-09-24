@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
     tools:context=".activity.Signup">
 
     <ProgressBar
@@ -20,7 +21,7 @@
         android:layout_height="wrap_content"
         android:text="Sign Up !"
         android:textSize="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
         android:textColor="@color/black"
         android:layout_marginBottom="40dp"
@@ -43,14 +44,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="12dp"
+                android:background="@drawable/edittext"
                 android:textColor="@color/black"
                 android:padding="15sp"
                 android:layout_marginHorizontal="20dp"
                 android:inputType="text"
                 android:hint="Name"
-                android:textColorHint="@color/black"
+                android:textColorHint="@color/teal_700"
                 android:drawablePadding="10dp"
                 android:maxLength="30"
+                android:elevation="5dp"
                 />
 
             <EditText
@@ -65,7 +68,9 @@
                 android:hint="Weight"
                 android:padding="15sp"
                 android:layout_marginTop="10dp"
-                android:textColorHint="@color/black"
+                android:background="@drawable/edittext"
+                android:elevation="5dp"
+                android:textColorHint="@color/teal_700"
                 />
 
 
@@ -81,7 +86,9 @@
                 android:maxLength="3"
                 android:padding="15dp"
                 android:textColor="@color/black"
-                android:textColorHint="@color/black"
+                android:textColorHint="@color/teal_700"
+                android:background="@drawable/edittext"
+                android:elevation="5dp"
                 android:textSize="12dp" />
 
             <EditText
@@ -93,14 +100,16 @@
                 android:layout_below="@id/ed_age"
                 android:layout_marginHorizontal="20dp"
                 android:inputType="numberDecimal"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittext"
+                android:elevation="5dp"
                 android:hint="Height"
                 android:padding="15dp"
-                android:textColorHint="@color/black"
+                android:textColorHint="@color/teal_700"
                 />
 
-
-            <TextView
-                android:id="@+id/ed_sex"
+            <EditText
+                android:id="@+id/ed_mail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="12dp"
@@ -108,10 +117,29 @@
                 android:textColor="@color/black"
                 android:layout_below="@id/ed_height"
                 android:layout_marginHorizontal="20dp"
+                android:inputType="textEmailAddress"
+                android:background="@drawable/edittext"
+                android:elevation="5dp"
+                android:hint="Email"
+                android:padding="15sp"
+                android:textColorHint="@color/teal_700"
+                />
+
+
+
+            <TextView
+                android:id="@+id/ed_sex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:layout_below="@id/ed_mail"
+                android:layout_marginHorizontal="20dp"
                 android:inputType="text"
-                android:hint="Sex"
+                android:hint="Gender"
                 android:padding="15dp"
-                android:textColorHint="@color/black"
+                android:textColorHint="@color/teal_700"
                 />
 
 
@@ -121,9 +149,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="10dp"
-                android:layout_marginStart="15sp"
-                android:layout_marginEnd="15sp"
+                android:layout_marginHorizontal="30dp"
                 >
 
                 <RadioButton
@@ -153,36 +179,23 @@
 
             </RadioGroup>
 
-            <EditText
-                android:id="@+id/ed_mail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
-                android:layout_marginTop="20dp"
-                android:textColor="@color/black"
-                android:layout_below="@id/radioGroup"
-                android:layout_marginHorizontal="20dp"
-                android:inputType="textEmailAddress"
-                android:hint="Email"
-                android:padding="15sp"
-                android:textColorHint="@color/black"
-                />
 
-
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/signup_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/ed_mail"
+                android:layout_below="@id/radioGroup"
                 android:layout_centerHorizontal="true"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
-                android:paddingHorizontal="30dp"
+                android:paddingHorizontal="40dp"
                 android:paddingVertical="8dp"
                 android:text="Sign Up"
                 android:textColor="@color/white"
-                android:textSize="12dp" />
+                android:background="@drawable/button"
+                android:textAllCaps="false"
+                android:textSize="15dp" />
 
 
             <TextView
@@ -191,12 +204,9 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/signup_btn"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="10dp"
                 android:layout_marginBottom="40dp"
-                android:fontFamily="sans-serif-smallcaps"
-                android:text="Sign In !"
-                android:textColor="@color/black"
-                android:textSize="20dp" />
+                android:text="@string/already_have_an_account"
+                android:textColor="@color/black" />
 
         </RelativeLayout>
 

@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.exam.calorie.R;
 
@@ -26,7 +27,8 @@ import java.util.ArrayList;
 
 public class Input_Activity extends AppCompatActivity {
 
-    LinearLayout ll_activity;
+    LinearLayout ll_activity,ll_food;
+    TextView txt_add_Food,txt_add_Activity;
     Spinner food_spinner,portion_spinner;
     String data;
     ArrayList<String> food_name = new ArrayList<>();
@@ -38,8 +40,26 @@ public class Input_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_input_);
 
         ll_activity = findViewById(R.id.ll_activity);
+        ll_food = findViewById(R.id.ll_food);
+        txt_add_Food = findViewById(R.id.txt_add_Food);
+        txt_add_Activity = findViewById(R.id.txt_add_Activity);
         food_spinner = findViewById(R.id.food_spinner);
         portion_spinner = findViewById(R.id.portion_spinner);
+
+
+        Intent intent =getIntent();
+        String a =  intent.getStringExtra("abc");
+        String b =  intent.getStringExtra("activity");
+
+       if(a.equals("food")){
+           txt_add_Food.setVisibility(View.VISIBLE);
+           ll_food.setVisibility(View.VISIBLE);
+       }
+
+        if(b.equals("act")){
+            txt_add_Activity.setVisibility(View.VISIBLE);
+            ll_activity.setVisibility(View.VISIBLE);
+        }
 
         showFoodData();
     }

@@ -3,6 +3,7 @@ package com.exam.calorie.activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         pref = getApplicationContext().getSharedPreferences("userDetails", 0);
         String user_name = pref.getString("name",null);
         String user_age = pref.getString("age",null);
@@ -67,15 +69,15 @@ public class MainActivity extends AppCompatActivity {
         height.setText("Height: "+user_height);
         weight.setText("Weight: "+user_weight);
         LinearLayout linear_layout = findViewById(R.id.liner1);
-        View view_line = findViewById(R.id.view_line);
-        linear_layout.setBackgroundColor(Color.BLUE);
+//        View view_line = findViewById(R.id.view_line);
+        linear_layout.setBackgroundColor(Color.parseColor("#018786"));
         name.setTextColor(Color.WHITE);
         email.setTextColor(Color.WHITE);
         sex.setTextColor(Color.WHITE);
         age.setTextColor(Color.WHITE);
         height.setTextColor(Color.WHITE);
         weight.setTextColor(Color.WHITE);
-        view_line.setBackgroundColor(Color.WHITE);
+//        view_line.setBackgroundColor(Color.WHITE);
 
         linear_layout.setOnClickListener(v -> {
             startActivity(new Intent(this, Daily_Activity.class));

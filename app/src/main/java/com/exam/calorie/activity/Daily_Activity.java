@@ -29,10 +29,18 @@ public class Daily_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_daily_);
 
         add_Food = findViewById(R.id.add_food);
+        add_activity = findViewById(R.id.add_activity);
         expListView = findViewById(R.id.daily_list);
 
         add_Food.setOnClickListener(v -> {
             Intent intent = new Intent(Daily_Activity.this, Input_Activity.class);
+            intent.putExtra("abc","food");
+            startActivity(intent);
+        });
+
+        add_activity.setOnClickListener(v -> {
+            Intent intent = new Intent(Daily_Activity.this, Input_Activity.class);
+            intent.putExtra("activity","act");
             startActivity(intent);
         });
 

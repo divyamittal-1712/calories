@@ -5,28 +5,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.SignInActivity"
-    android:orientation="vertical"
-    >
+    android:background="@drawable/bg_gradient">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/txt_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Sing In"
-        android:textSize="20sp"
-        android:textStyle="bold"
+        android:text="Sign In"
+        android:textSize="25dp"
         android:textColor="@color/black"
-        android:layout_marginTop="150dp"
-        />
+        android:layout_marginTop="100dp"
+        android:fontFamily="sans-serif-smallcaps" />
+
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/ed_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:textColor="@color/black"
         android:layout_below="@id/txt_login"
-        android:layout_margin="15sp"
+        android:paddingVertical="12dp"
+        android:background="@drawable/edittext"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="25dp"
+        android:inputType="textEmailAddress"
+        android:drawablePadding="8dp"
+        android:paddingLeft="12dp"
+        android:textColorHint="@color/teal_700"
+        android:drawableLeft="@drawable/ic_baseline_email_24"
         android:hint="Email id"
+        android:elevation="5dp"
         />
+
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_login"
@@ -34,18 +45,26 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/ed_email"
         android:layout_centerHorizontal="true"
+        android:background="@drawable/button"
+        android:paddingHorizontal="40dp"
+        android:paddingVertical="10dp"
+        android:layout_marginTop="20dp"
         android:text="Sign In"
+        android:textColor="@color/white"
+        android:textSize="15dp"
         android:textAllCaps="false" />
+
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/txt_sign_in"
         android:layout_below="@id/btn_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="Sing Up"
-        android:textSize="20sp"
-        android:textStyle="bold"
         android:textColor="@color/black"
-        android:layout_marginTop="50dp"
+        android:text="@string/dont_have_an_account"
+        android:layout_marginTop="20dp"
         />
+
+
+
 </RelativeLayout>
