@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.exam.calorie.DatabaseManagerModel;
+import com.exam.calorie.model.DatabaseManagerModel;
 import com.exam.calorie.R;
 
 import java.util.ArrayList;

@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.exam.calorie.DatabaseHandler;
+import com.exam.calorie.utils.DatabaseHandler;
 import com.exam.calorie.R;
 
 public class SignInActivity extends AppCompatActivity {

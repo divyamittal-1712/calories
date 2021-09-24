@@ -67,7 +67,6 @@ public class JsonConvtor extends AppCompatActivity {
 
     public void fi() {
         try {
-
             JSONObject js = new JSONObject(data);
             JSONArray jsonArray = js.getJSONArray("Sheet1");
             for (int i = 0; i < jsonArray.length(); i++) {
@@ -81,7 +80,7 @@ public class JsonConvtor extends AppCompatActivity {
                 Carbohydrate = jsonObject1.getString("Carbohydrate (g)");
                 Serving = jsonObject1.getString("Serving Description 1 (g)");
 
-                Log.d("Protein",name);
+                Log.e("Protein",name);
 
             }
 

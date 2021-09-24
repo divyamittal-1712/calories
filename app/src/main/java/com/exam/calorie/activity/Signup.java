@@ -13,8 +13,8 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.exam.calorie.DatabaseHandler;
-import com.exam.calorie.DatabaseManagerModel;
+import com.exam.calorie.utils.DatabaseHandler;
+import com.exam.calorie.model.DatabaseManagerModel;
 import com.exam.calorie.R;
 
 public class Signup extends AppCompatActivity {

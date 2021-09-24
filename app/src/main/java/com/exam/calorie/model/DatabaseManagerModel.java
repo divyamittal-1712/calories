@@ -1,11 +1,14 @@
-package com.exam.calorie;
+package com.exam.calorie.model;
 
 public class DatabaseManagerModel {
 
     String id;
     String name;
     String height;
-    String age,sex,weight,mail;
+    String age;
+    String sex;
+    String weight;
+    String mail;
 
     public DatabaseManagerModel() {
     }

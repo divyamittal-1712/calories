@@ -4,9 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Neelesh/Calorie/app/src/main/res/layout/activity_daily_.xml" value="0.20416666666666666" />
+        <entry key="..\:/Neelesh/Calorie/app/src/main/res/layout/activity_input_.xml" value="0.18703703703703703" />
+        <entry key="..\:/Neelesh/Calorie/app/src/main/res/layout/activity_json_convtor.xml" value="0.20416666666666666" />
         <entry key="..\:/Neelesh/Calorie/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/Neelesh/Calorie/app/src/main/res/layout/activity_sign_in.xml" value="0.19010416666666666" />
         <entry key="..\:/Neelesh/Calorie/app/src/main/res/layout/activity_signup.xml" value="0.17222222222222222" />
+        <entry key="..\:/Neelesh/Calorie/app/src/main/res/layout/list_group.xml" value="0.20416666666666666" />
+        <entry key="..\:/Neelesh/Calorie/app/src/main/res/layout/list_item.xml" value="0.20416666666666666" />
         <entry key="..\:/Neelesh/Calorie/app/src/main/res/layout/show_user_layout.xml" value="0.20416666666666666" />
         <entry key="..\:/Neelesh/Calorie/app/src/main/res/menu/logout.xml" value="0.20416666666666666" />
       </map>

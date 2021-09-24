@@ -13,11 +13,12 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.exam.calorie.DatabaseHandler;
-import com.exam.calorie.DatabaseManagerModel;
+import com.exam.calorie.utils.DatabaseHandler;
+import com.exam.calorie.model.DatabaseManagerModel;
 import com.exam.calorie.R;
 import com.exam.calorie.adapter.ShowAllUsersAdapter;
 
@@ -64,7 +65,8 @@ public class MainActivity extends AppCompatActivity {
         age.setText("Age: "+user_age);
         height.setText("Height: "+user_height);
         weight.setText("Weight: "+user_weight);
-        LinearLayout linear_layout = findViewById(R.id.linear_layout);
+        LinearLayout linear_layout = findViewById(R.id.liner1);
+        View view_line = findViewById(R.id.view_line);
         linear_layout.setBackgroundColor(Color.BLUE);
         name.setTextColor(Color.WHITE);
         email.setTextColor(Color.WHITE);
@@ -72,6 +74,11 @@ public class MainActivity extends AppCompatActivity {
         age.setTextColor(Color.WHITE);
         height.setTextColor(Color.WHITE);
         weight.setTextColor(Color.WHITE);
+        view_line.setBackgroundColor(Color.WHITE);
+
+        linear_layout.setOnClickListener(v -> {
+            startActivity(new Intent(this, Daily_Activity.class));
+        });
     }
 
     @Override

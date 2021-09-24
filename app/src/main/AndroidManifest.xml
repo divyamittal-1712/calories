@@ -12,11 +12,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Calorie" >
+        <activity android:name=".JsonConvtor">
+
+        </activity>
         <activity
             android:name=".activity.SignInActivity"
             android:exported="true" />
-        <activity android:name=".Input_Activity"/>
-        <activity android:name=".Daily_Activity"/>
+        <activity android:name=".activity.Input_Activity"/>
+        <activity android:name=".activity.Daily_Activity"/>
         <activity android:name=".activity.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

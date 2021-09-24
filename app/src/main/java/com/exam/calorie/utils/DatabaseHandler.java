@@ -1,13 +1,14 @@
-package com.exam.calorie;
+package com.exam.calorie.utils;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 import androidx.annotation.Nullable;
+
+import com.exam.calorie.model.DatabaseManagerModel;
 
 import java.util.ArrayList;
 
@@ -106,7 +107,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         res.moveToFirst();
         while(res.isAfterLast() == false){
             DatabaseManagerModel response = new DatabaseManagerModel();
-            response.mail = res.getString(res.getColumnIndex(Table_Name));
+//            response.mail = res.getString(res.getColumnIndex(Table_Name));
             // rest of columns
             return response;
         }
