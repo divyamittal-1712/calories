@@ -17,10 +17,11 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.exam.calorie.utils.DatabaseHandler;
-import com.exam.calorie.model.DatabaseManagerModel;
+
 import com.exam.calorie.R;
 import com.exam.calorie.adapter.ShowAllUsersAdapter;
+import com.exam.calorie.model.DatabaseManagerModel;
+import com.exam.calorie.utils.DatabaseHandler;
 
 import java.util.ArrayList;
 

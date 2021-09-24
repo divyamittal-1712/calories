@@ -26,8 +26,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String Key_Mail = "mail";
 
 
-
-
     public DatabaseHandler(@Nullable Context context) {
         super(context, Database_Name, null, Database_Version);
     }
