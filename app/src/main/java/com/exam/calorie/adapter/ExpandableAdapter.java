@@ -93,6 +93,7 @@ public class ExpandableAdapter extends BaseExpandableListAdapter {
 
             TextView txtListChild = (TextView) convertView
                     .findViewById(R.id.lblListItem);
+            TextView lblListItem_qunt = convertView.findViewById(R.id.lblListItem_qunt);
 
             txtListChild.setText(childText);
             return convertView;

@@ -26,6 +26,13 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String Key_Mail = "mail";
 
 
+    private static final String Food_Table_Name = "calories_in";
+    private static final String Food_id = "food_id";
+    private static final String Food_name = "food_name";
+    private static final String Food_quantitty = "food_quantity";
+    private static final String Food_meal = "food_meal";
+
+
     public DatabaseHandler(@Nullable Context context) {
         super(context, Database_Name, null, Database_Version);
     }
@@ -43,11 +50,19 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 + Key_Age + " TEXT,"
                 + Key_Mail + " TEXT UNIQUE)");
 
+        db.execSQL("CREATE TABLE " + Food_Table_Name + "("
+                + Food_id + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + Food_name + " TEXT, "
+                + Food_quantitty + " TEXT,"
+                + Key_Weight + " TEXT,"
+                + Food_meal + " TEXT )");
+
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + Table_Name);
+        db.execSQL("DROP TABLE IF EXISTS " + Food_Table_Name);
 
         onCreate(db);
     }
@@ -69,6 +84,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         return id;
     }
+
     public DatabaseManagerModel getNote(long email) {
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -175,4 +191,46 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return hasObject;
     }
 
+    public long addFood(String food_name, String food_quantity, String food_meal) {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(Food_name, food_name);
+        values.put(Food_quantitty, food_quantity);
+        values.put(Food_meal, food_meal);
+
+        long id = db.insert(Food_Table_Name, null, values);
+        db.close();
+
+        return id;
+    }
+
+    public ArrayList<String> getAllBookFood(String type) {
+        ArrayList<String> array_list = new ArrayList<>();
+
+        String selectQuery = "SELECT * FROM " + Food_Table_Name + " where " + Food_meal + "='" + type + "'";
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                array_list.add(cursor.getString(cursor.getColumnIndex(Food_name)));
+                array_list.add(cursor.getString(cursor.getColumnIndex(Food_quantitty)));
+                array_list.add(cursor.getString(cursor.getColumnIndex(Food_meal)));
+//                String model = new AppointmentTableModel();
+//                model.setAppoint_id(cursor.getString(cursor.getColumnIndex(APPOINTMENT_ID)));
+//                model.setAppoint_patient_name(cursor.getString(cursor.getColumnIndex(Food_name)));
+//                model.setAppoint_patient_phone(cursor.getString(cursor.getColumnIndex(Food_quantitty)));
+//                model.setAppoint_patient_email(cursor.getString(cursor.getColumnIndex(Food_meal)));
+//
+//                appointmentTableModels.add(model);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+//        db.close();
+
+        return array_list;
+    }
 }

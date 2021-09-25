@@ -9,6 +9,7 @@ import android.widget.ExpandableListView;
 
 import com.exam.calorie.R;
 import com.exam.calorie.adapter.ExpandableAdapter;
+import com.exam.calorie.utils.DatabaseHandler;
 
 
 import java.util.ArrayList;
@@ -28,6 +29,7 @@ public class Daily_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_);
 
+
         add_Food = findViewById(R.id.add_food);
         add_activity = findViewById(R.id.add_activity);
         expListView = findViewById(R.id.daily_list);
@@ -40,7 +42,7 @@ public class Daily_Activity extends AppCompatActivity {
 
         add_activity.setOnClickListener(v -> {
             Intent intent = new Intent(Daily_Activity.this, Input_Activity.class);
-            intent.putExtra("activity","act");
+            intent.putExtra("abc","activity");
             startActivity(intent);
         });
 
@@ -56,6 +58,7 @@ public class Daily_Activity extends AppCompatActivity {
     private void prepareListData() {
         listDataHeader = new ArrayList<String>();
         listDataChild = new HashMap<String, List<String>>();
+        final DatabaseHandler helper = new DatabaseHandler(this);
 
         // Adding child data
         listDataHeader.add("Breakfast");
@@ -64,36 +67,40 @@ public class Daily_Activity extends AppCompatActivity {
         listDataHeader.add("Dinner");
 
         // Adding child data
-        List<String> breakfast = new ArrayList<String>();
-        breakfast.add("The Shawshank Redemption");
-        breakfast.add("The Godfather");
-        breakfast.add("The Godfather: Part II");
-        breakfast.add("Pulp Fiction");
-        breakfast.add("The Good, the Bad and the Ugly");
-        breakfast.add("The Dark Knight");
-        breakfast.add("12 Angry Men");
+//        List<String> breakfast = new ArrayList<String>();
+        final ArrayList breakfast = helper.getAllBookFood("Breakfast");
+//        breakfast.add("The Shawshank Redemption");
+//        breakfast.add("The Godfather");
+//        breakfast.add("The Godfather: Part II");
+//        breakfast.add("Pulp Fiction");
+//        breakfast.add("The Good, the Bad and the Ugly");
+//        breakfast.add("The Dark Knight");
+//        breakfast.add("12 Angry Men");
 
-        List<String> lunch = new ArrayList<String>();
-        lunch.add("The Conjuring");
-        lunch.add("Despicable Me 2");
-        lunch.add("Turbo");
-        lunch.add("Grown Ups 2");
-        lunch.add("Red 2");
-        lunch.add("The Wolverine");
+//        List<String> lunch = new ArrayList<String>();
+        final ArrayList lunch = helper.getAllBookFood("Lunch");
+//        lunch.add("The Conjuring");
+//        lunch.add("Despicable Me 2");
+//        lunch.add("Turbo");
+//        lunch.add("Grown Ups 2");
+//        lunch.add("Red 2");
+//        lunch.add("The Wolverine");
 
-        List<String> snacks = new ArrayList<String>();
-        snacks.add("2 Guns");
-        snacks.add("The Smurfs 2");
-        snacks.add("The Spectacular Now");
-        snacks.add("The Canyons");
-        snacks.add("Europa Report");
+//        List<String> snacks = new ArrayList<String>();
+        final ArrayList snacks = helper.getAllBookFood("Snacks");
+//        snacks.add("2 Guns");
+//        snacks.add("The Smurfs 2");
+//        snacks.add("The Spectacular Now");
+//        snacks.add("The Canyons");
+//        snacks.add("Europa Report");
 
-        List<String> dinner = new ArrayList<String>();
-        dinner.add("The Smurfs 2");
-        dinner.add("The Spectacular Now");
-        dinner.add("The Canyons");
-        dinner.add("Europa Report");
-        dinner.add("2 Guns");
+//        List<String> dinner = new ArrayList<String>();
+        final ArrayList dinner = helper.getAllBookFood("Dinner");
+//        dinner.add("The Smurfs 2");
+//        dinner.add("The Spectacular Now");
+//        dinner.add("The Canyons");
+//        dinner.add("Europa Report");
+//        dinner.add("2 Guns");
 
         listDataChild.put(listDataHeader.get(0), breakfast); // Header, Child data
         listDataChild.put(listDataHeader.get(1), lunch);
