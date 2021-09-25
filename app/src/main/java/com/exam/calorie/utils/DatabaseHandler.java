@@ -32,6 +32,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String Food_quantitty = "food_quantity";
     private static final String Food_meal = "food_meal";
 
+    private static final String Activity_Table_Name = "calories_out";
+    private static final String Activity_id = "activity_id";
+    private static final String Activity_Type = "activity_type";
+    private static final String Duration = "duration";
+
 
     public DatabaseHandler(@Nullable Context context) {
         super(context, Database_Name, null, Database_Version);
@@ -57,12 +62,18 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 + Key_Weight + " TEXT,"
                 + Food_meal + " TEXT )");
 
+        db.execSQL("CREATE TABLE " + Activity_Table_Name + "("
+                + Activity_id + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + Activity_Type + " TEXT, "
+                + Duration + " TEXT )");
+
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + Table_Name);
         db.execSQL("DROP TABLE IF EXISTS " + Food_Table_Name);
+        db.execSQL("DROP TABLE IF EXISTS " + Activity_Table_Name);
 
         onCreate(db);
     }
@@ -201,6 +212,22 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put(Food_meal, food_meal);
 
         long id = db.insert(Food_Table_Name, null, values);
+        db.close();
+
+        return id;
+    }
+
+
+    public long addActivity(String activity_type, String duration) {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(Activity_Type, activity_type);
+        values.put(Duration, duration);
+
+
+        long id = db.insert(Activity_Table_Name, null, values);
         db.close();
 
         return id;

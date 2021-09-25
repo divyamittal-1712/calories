@@ -41,8 +41,7 @@ public class Daily_Activity extends AppCompatActivity {
         });
 
         add_activity.setOnClickListener(v -> {
-            Intent intent = new Intent(Daily_Activity.this, Input_Activity.class);
-            intent.putExtra("abc","activity");
+            Intent intent = new Intent(Daily_Activity.this, Input_Exercise_Activity.class);
             startActivity(intent);
         });
 

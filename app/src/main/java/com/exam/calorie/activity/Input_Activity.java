@@ -124,10 +124,7 @@ public class Input_Activity extends AppCompatActivity {
 
     }
 
-    public void onDeleteClick(View v){
 
-
-    }
 
     private void showFoodData(){
         String string = "";
